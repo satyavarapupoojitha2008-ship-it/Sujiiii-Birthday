@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sujiiii 🎀</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #ffe4ef, #fff0f5, #ffd6e7);
+    color: #a63d69;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 35px 18px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: appear 0.7s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 48px);
+    margin: 15px 0;
+    color: #d63384;
+}
+
+h2 {
+    font-size: 27px;
+    margin: 15px 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 12px auto;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 30px;
+    margin: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #ed75a8;
+    color: white;
+    box-shadow: 0 5px 15px #d98aaa66;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.07);
+    background: #d94b88;
+}
+
+.yes {
+    background: #e75491;
+}
+
+.no {
+    background: #b8a0aa;
+}
+
+.card {
+    width: min(92%, 650px);
+    background: #ffffffb8;
+    padding: 30px 22px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px #d88eaa44;
+    border: 2px solid white;
+}
+
+.heart {
+    font-size: 45px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    width: min(100%, 600px);
+    margin: 20px auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px #d88eaa55;
+}
+
+.small {
+    font-size: 14px;
+    color: #aa6683;
+}
+
+#noMessage {
+    min-height: 30px;
+    font-weight: bold;
+}
+
+.hearts {
+    position: fixed;
+    top: -30px;
+    pointer-events: none;
+    animation: fall 5s linear forwards;
+    z-index: 10;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 450px) {
+    .gallery img {
+        height: 155px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1: FRIEND QUESTION -->
+<section class="page active" id="page1">
+
+    <div class="heart">💗</div>
+
+    <div class="card">
+        <h2>Hey Sujiiii! 🎀</h2>
+
+        <h1>Are you my friend?</h1>
+
+        <p>Think carefully before answering! 😂</p>
+
+        <button class="yes" onclick="goToPage(2)">
+            YES 💕
+        </button>
+
+        <button class="no" onclick="wrongButton()">
+            NO 🙈
+        </button>
+
+        <p id="noMessage"></p>
+    </div>
+
+</section>
+
+
+<!-- PAGE 2: EXCITEMENT -->
+<section class="page" id="page2">
+
+    <div class="heart">🥹💕</div>
+
+    <div class="card">
+
+        <h1>YAYYYYY!!</h1>
+
+        <h2>Sujiiii, one more question! 💗</h2>
+
+        <p>
+            Are you excited to see what's inside?
+        </p>
+
+        <button onclick="goToPage(3)">
+            OF COURSE! 😍
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 3: BIRTHDAY WISH -->
+<section class="page" id="page3">
+
+    <div class="heart">🎂</div>
+
+    <div class="card">
+
+        <h1>HAPPY BIRTHDAY!!</h1>
+
+        <h2>MY DEAR SUJIIII 💗</h2>
+
+        <p>
+            Today is not just your birthday...
+            It's the day someone very special came into this world! 🥹
+        </p>
+
+        <p>
+            I hope your life is always filled with happiness,
+            laughter, beautiful memories and endless smiles.
+        </p>
+
+        <p>
+            You are not just my friend,
+            you are one of my favourite person...!  🦋
+             I  think ours is the best bond ever!! because u dont leave me in any situation i know i may disappointedd you many times so sorry nd soo sad for that but at any time any situation i never leave your hand. That's my Promise!! Love You Sooo Much rah. I treat you as my tom! Love you tom from your jerry!!
+        </p>
+
+        <p><b>With lots of love,</b><br>
+        Your Poojiiii 💕</p>
+
+        <button onclick="playMusic()" id="musicButton">
+            🎵 Play Birthday Music
+        </button>
+
+        <p class="small">
+            Music can be played after tapping the button.
+        </p>
+
+        <button onclick="goToPage(4)">
+            OPEN OUR MEMORIES 📸
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 4: PHOTO GALLERY -->
+<section class="page" id="page4">
+
+    <div class="heart">📸</div>
+
+    <h1>Our Little World 💗</h1>
+
+    <p>
+        Some moments become memories...
+        Some memories become forever! 🥹
+    </p>
+
+    <div class="gallery">
+
+        <!-- Replace these images with your photos -->
+
+       <img src="C:\Users\Satyavarapu Srinivas\OneDrive\Desktop\Sujiiii-Birthday\photo1.jpg.jpeg" alt="Our memory 1">
+       <img src="C:\Users\Satyavarapu Srinivas\OneDrive\Desktop\Sujiiii-Birthday\photo2.jpg.jpeg" alt="Our memory 2">
+       <img src="C:\Users\Satyavarapu Srinivas\OneDrive\Desktop\Sujiiii-Birthday\photo3.jpg.jpeg" alt="Our memory 3">
+       <img src="C:\Users\Satyavarapu Srinivas\OneDrive\Desktop\Sujiiii-Birthday\photo4.jpg.jpeg" alt="Our memory 4">
+       <img src="C:\Users\Satyavarapu Srinivas\OneDrive\Desktop\Sujiiii-Birthday\photo5.jpg.jpeg" alt="Our memory 5">
+       <img src="C:\Users\Satyavarapu Srinivas\OneDrive\Desktop\Sujiiii-Birthday\photo6.jpg.jpeg" alt="Our memory 6">
+
+    </div>
+
+    <p>
+        Every picture has a story,
+        and every story has YOU! 💕
+    </p>
+
+    <button onclick="goToPage(5)">
+        ONE LAST THING 💌
+    </button>
+
+</section>
+
+
+<!-- PAGE 5: FINAL MESSAGE -->
+<section class="page" id="page5">
+
+    <div class="heart">💌</div>
+
+    <div class="card">
+
+        <h1>For My Sujiiii 🥹</h1>
+
+        <h2>One Little Promise 💗</h2>
+
+        <p>
+            No matter how busy life gets,
+            no matter how many things change,
+            I hope we always find reasons to laugh together.
+        </p>
+
+        <p>
+            Thank you for being part of my life.
+            Thank you for all the silly conversations,
+            unforgettable memories and crazy moments.
+            It means alot to me thanks for everything you did dear!!
+        </p>
+
+        <p>
+            I wish you all the happiness in this world.
+            Keep smiling, keep shining and never stop being YOU! 🦋
+        </p>
+
+        <h2>
+            HAPPY BIRTHDAY ONCE AGAIN!! 🎂
+        </h2>
+
+        <p>
+            Love you loads, Sujiiii! 💕
+        </p>
+
+        <h1>Forever Best Friends! ♾️</h1>
+
+        <p>
+            From your partner in crime,<br>
+            <b>POOJIIII 🎀</b>
+        </p>
+
+        <p>
+            PS: Birthday treat mat bhoolna! 😂
+        </p>
+
+        <button onclick="goToPage(1)">
+            REPLAY OUR SURPRISE 💗
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC FILE -->
+<audio id="bgMusic" loop>
+    <source src="friendship.mp3.mpeg" type="audio/mpeg">
+</audio>
+
+<script>
+
+// CHANGE BETWEEN PAGES
+
+function goToPage(number) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById('page' + number)
+        .classList.add('active');
+
+    window.scrollTo(0, 0);
+
+    if (number === 3) {
+        createHearts();
+    }
+}
+
+
+// NO BUTTON MESSAGE
+
+function wrongButton() {
+
+    document.getElementById('noMessage').innerHTML =
+        "Oops! You clicked the WRONG button! 😂💗 Try again!";
+}
+
+
+// PLAY MUSIC
+
+function playMusic() {
+
+    const music = document.getElementById('bgMusic');
+
+    music.play().then(() => {
+        document.getElementById('musicButton').innerHTML =
+            "🎵 Music is playing! 💗";
+    }).catch(() => {
+        alert("Please add your friendship.mp3 music file!");
+    });
+
+}
+
+
+// FALLING HEARTS
+
+function createHearts() {
+
+    const symbols = ['💗', '💕', '🌸', '✨', '💖'];
+
+    for (let i = 0; i < 25; i++) {
+
+        let heart = document.createElement('div');
+
+        heart.className = 'hearts';
+
+        heart.innerHTML =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        heart.style.left = Math.random() * 100 + 'vw';
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + 's';
+
+        heart.style.fontSize =
+            (18 + Math.random() * 20) + 'px';
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 7000);
+    }
+}
+
+</script>
+
+</body>
+</html>
